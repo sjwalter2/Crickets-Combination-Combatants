@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"spr_character","path":"sprites/spr_character/spr_character.yy",},"order":1,},
     {"id":{"name":"obj_BattleController","path":"objects/obj_BattleController/obj_BattleController.yy",},"order":0,},
+    {"id":{"name":"characterInfo","path":"scripts/characterInfo/characterInfo.yy",},"order":0,},
     {"id":{"name":"spr_hex","path":"sprites/spr_hex/spr_hex.yy",},"order":0,},
     {"id":{"name":"obj_Character","path":"objects/obj_Character/obj_Character.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
@@ -49,7 +50,9 @@
   "TextureGroups": [
     {"isScaled":true,"compressFormat":"bz2","autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"characterInfo.json","resourceType":"GMIncludedFile",},
+  ],
   "MetaData": {
     "IDEVersion": "2022.3.0.625",
   },
