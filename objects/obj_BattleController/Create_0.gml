@@ -34,6 +34,7 @@ function addCharacter(X,Y){
 	var Character = instance_create_layer(X*grid_cell_size+x_offset,Y*grid_cell_size*0.75,"Instances",obj_Character)
 	show_debug_message("Placing new character at: " + string(X*grid_cell_size+x_offset) + "," + string(Y*grid_cell_size*0.75))
 	ds_grid_set(battleGrid,X,Y,Character)
+
 }
 
 // moveCharacter moves an existing character from one part of the grid to another
@@ -61,15 +62,15 @@ function moveCharacter(oldX,oldY,newX,newY) {
 
 
 	//Set the character to be moved from oldX, oldY
-	var movedCharacter = ds_grid_get(battleGrid,newX,newY)
+	var movedCharacter = ds_grid_get(battleGrid,oldX,oldY)
 
 	var x_offset = checkOffset(newY);	
 
 	ds_grid_set(battleGrid,newX,newY,movedCharacter)
 	show_debug_message("Placing existing character at: " + string(newX*grid_cell_size+x_offset) + "," + string(newY*grid_cell_size*0.75))
 	with movedCharacter {
-		x = newX*grid_cell_size+x_offset
-		y = newY*grid_cell_size*0.75
+		x = newX*other.grid_cell_size+x_offset
+		y = newY*other.grid_cell_size*0.75
 	}
 
 	ds_grid_set(battleGrid,oldX,oldY,-1)
