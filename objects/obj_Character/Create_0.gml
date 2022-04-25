@@ -17,3 +17,7 @@ hp = 100
 //variables related to location
 gridX = -1
 gridY = -1
+
+followMouse = 0
+returnX = x
+returnY = y

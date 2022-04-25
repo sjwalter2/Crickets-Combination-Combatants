@@ -12,6 +12,7 @@ for (i = 0; i < ds_grid_height(battleGrid); i+=1) {
 		}
 		
 		
-		draw_sprite(spr_hex,0,j*grid_cell_size+x_offset,i*grid_cell_size*0.75)
+		draw_sprite(spr_hex,0,start_x + j*grid_cell_size+x_offset,start_y + i*grid_cell_size*0.75)
 	}
 }
+draw_line(room_width/2,0,room_width/2,room_height)
