@@ -8,9 +8,13 @@ if mode=="placement" {
 		} else if (selectedCharacter != noone)
 		{
 			var newXY = convertXYtoGridXY(mouse_x,mouse_y)
-			moveCharacter(selectedCharacter.gridX,selectedCharacter.gridY,newXY[0],newXY[1])
-			selectedCharacter = noone;
+			if(moveCharacter(selectedCharacter.gridX,selectedCharacter.gridY,newXY[0],newXY[1])){
+				selectedCharacter = noone;
+			}
 		}
-		show_debug_message(string(selectedCharacter));
+	}
+	if(mouse_check_button_pressed(mb_right)){
+		selectedCharacter = noone
 	}
 }
+
