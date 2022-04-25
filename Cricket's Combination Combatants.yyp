@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"obj_slots","path":"objects/obj_slots/obj_slots.yy",},"order":3,},
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},"order":6,},
+    {"id":{"name":"spr_raceIcons","path":"sprites/spr_raceIcons/spr_raceIcons.yy",},"order":8,},
     {"id":{"name":"spr_character","path":"sprites/spr_character/spr_character.yy",},"order":1,},
     {"id":{"name":"spr_classIcons","path":"sprites/spr_classIcons/spr_classIcons.yy",},"order":7,},
     {"id":{"name":"obj_BattleController","path":"objects/obj_BattleController/obj_BattleController.yy",},"order":0,},

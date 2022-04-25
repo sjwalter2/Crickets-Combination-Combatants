@@ -4,7 +4,7 @@
 gridW = 3
 gridH = 3
 
-rowSprites = [spr_classIcons,spr_classIcons,spr_classIcons]
+rowSprites = [spr_classIcons,spr_raceIcons,spr_classIcons]
 
 show_debug_message("icons" + string(spr_classIcons.sprite_height))
 show_debug_message("row" + string(rowSprites[0].sprite_height))
