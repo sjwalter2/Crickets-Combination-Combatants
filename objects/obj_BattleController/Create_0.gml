@@ -155,4 +155,4 @@ function moveCharacter(oldX,oldY,newX,newY) {
 }
 
 addCharacter(1,2)
-
+//hello
