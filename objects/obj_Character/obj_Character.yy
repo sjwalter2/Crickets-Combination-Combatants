@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_character",
-    "path": "sprites/spr_character/spr_character.yy",
+    "name": "spr_charSheet1",
+    "path": "sprites/spr_charSheet1/spr_charSheet1.yy",
   },
   "solid": false,
   "visible": true,

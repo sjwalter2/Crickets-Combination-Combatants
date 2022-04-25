@@ -1,18 +1,23 @@
 {
   "resources": [
     {"id":{"name":"obj_slots","path":"objects/obj_slots/obj_slots.yy",},"order":3,},
+    {"id":{"name":"spr_ability","path":"sprites/spr_ability/spr_ability.yy",},"order":11,},
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},"order":6,},
+    {"id":{"name":"spr_raceIcons","path":"sprites/spr_raceIcons/spr_raceIcons.yy",},"order":8,},
     {"id":{"name":"spr_character","path":"sprites/spr_character/spr_character.yy",},"order":1,},
     {"id":{"name":"spr_classIcons","path":"sprites/spr_classIcons/spr_classIcons.yy",},"order":7,},
     {"id":{"name":"obj_BattleController","path":"objects/obj_BattleController/obj_BattleController.yy",},"order":0,},
     {"id":{"name":"characterInfo","path":"scripts/characterInfo/characterInfo.yy",},"order":0,},
+    {"id":{"name":"spr_class","path":"sprites/spr_class/spr_class.yy",},"order":13,},
     {"id":{"name":"spr_charSheet1","path":"sprites/spr_charSheet1/spr_charSheet1.yy",},"order":2,},
     {"id":{"name":"Sprite1_1","path":"sprites/Sprite1_1/Sprite1_1.yy",},"order":3,},
+    {"id":{"name":"spr_abilityIcons","path":"sprites/spr_abilityIcons/spr_abilityIcons.yy",},"order":10,},
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},"order":5,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":4,},
     {"id":{"name":"spr_hex","path":"sprites/spr_hex/spr_hex.yy",},"order":0,},
     {"id":{"name":"obj_Character","path":"objects/obj_Character/obj_Character.yy",},"order":1,},
     {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},"order":2,},
+    {"id":{"name":"spr_race","path":"sprites/spr_race/spr_race.yy",},"order":12,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

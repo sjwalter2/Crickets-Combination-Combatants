@@ -1,9 +1,13 @@
 /// @description Initialize a battle
 
 //Init variables
-grid_width = 6
-grid_height = 6
-grid_cell_size = 64
+grid_width = 5
+grid_height = 5
+grid_cell_size = 128
+start_x = room_width/2 - (grid_width+.5)*grid_cell_size/2
+start_y = room_height/2 - grid_cell_size/2
+char_x_offset = .5
+char_y_offset = .3
 
 //Create the battle grid
 battleGrid = ds_grid_create(grid_width,grid_height)
@@ -36,6 +40,8 @@ function checkOffset(rowY) {
 
 //check THIS shit out: https://stackoverflow.com/questions/7705228/hexagonal-grids-how-do-you-find-which-hexagon-a-point-is-in
 function convertXYtoGridXY(inputX,inputY) {
+	inputX -= start_x
+	inputY -= start_y
 	var returnXY = array_create(2)
 	
 	var squareGridHeight = 0.75*grid_cell_size
@@ -100,9 +106,10 @@ function addCharacter(X,Y){
 	}
 	
 	var x_offset = checkOffset(Y)
-
-	var Character = instance_create_layer(X*grid_cell_size+x_offset,Y*grid_cell_size*0.75,"Instances",obj_Character)
-	show_debug_message("Placing new character at: " + string(X*grid_cell_size+x_offset) + "," + string(Y*grid_cell_size*0.75))
+	var char_x = (X+char_x_offset)*grid_cell_size+x_offset+start_x
+	var char_y = (Y+char_y_offset)*grid_cell_size*0.75+start_y
+	var Character = instance_create_depth(char_x,char_y,depth - 1,obj_Character)
+	show_debug_message("Placing new character at: " + string(char_x) + "," + string(char_y))
 	ds_grid_set(battleGrid,X,Y,Character)
 	with(Character){
 		gridX = X
@@ -130,7 +137,7 @@ function moveCharacter(oldX,oldY,newX,newY) {
 	}
 	
 	//Verify no character exists at newX,newY
-	if(ds_grid_get(battleGrid,newX,newY) != -1) {
+	if(ds_grid_get(battleGrid,newX,newY) != -1 && ds_grid_get(battleGrid,newX,newY) != ds_grid_get(battleGrid,oldX,oldY)) {
 		show_debug_message("A character already exists at "+ string(newX) + "," + string(newY))
 		return 0;
 	}
@@ -138,22 +145,23 @@ function moveCharacter(oldX,oldY,newX,newY) {
 
 	//Set the character to be moved from oldX, oldY
 	var movedCharacter = ds_grid_get(battleGrid,oldX,oldY)
-
+	ds_grid_set(battleGrid,oldX,oldY,-1)
 	var x_offset = checkOffset(newY);	
 
 	ds_grid_set(battleGrid,newX,newY,movedCharacter)
 	show_debug_message("Placing existing character at: " + string(newX*grid_cell_size+x_offset) + "," + string(newY*grid_cell_size*0.75))
 	with movedCharacter {
-		x = newX*other.grid_cell_size+x_offset
-		y = newY*other.grid_cell_size*0.75
+		x = (newX + other.char_x_offset)*other.grid_cell_size+x_offset + other.start_x
+		y = (newY+ other.char_y_offset)*other.grid_cell_size*0.75 + other.start_y
 		gridX = newX
 		gridY = newY
 	}
 
 
-	ds_grid_set(battleGrid,oldX,oldY,-1)
+	
 	return 1;
 }
 
 addCharacter(1,2)
-//hello
+addCharacter(2,2)
+addCharacter(3,3)
