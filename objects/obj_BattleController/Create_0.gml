@@ -1,8 +1,8 @@
 /// @description Initialize a battle
 
 //Init variables
-grid_width = 4
-grid_height = 5
+grid_width = 6
+grid_height = 6
 grid_cell_size = 64
 
 //Create the battle grid
