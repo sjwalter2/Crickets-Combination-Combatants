@@ -99,15 +99,24 @@ function convertXYtoGridXY(inputX,inputY) {
 
 // addCharacter creates a character at grid position X,Y and adds it to the battleGrid
 // note: X and Y are grid positions, NOT literal gameMaker x and y
+// if character is successfully placed, return 1; otherwise, return 0. Any code using this function should check to ensure adding character was successful.
 function addCharacter(X,Y){
 	if X >= grid_width or Y >= grid_height or X < 0 or Y < 0 {
 		show_debug_message(" X or Y is outside of grid")
-		exit;
+		return 0;
 	}
+	//Verify no character exists at newX,newY
+	if(ds_grid_get(battleGrid,X,Y) != -1) {
+		show_debug_message("A character already exists at "+ string(X) + "," + string(Y))
+		return 0;
+	}
+
 	
 	var x_offset = checkOffset(Y)
 	var char_x = (X+char_x_offset)*grid_cell_size+x_offset+start_x
 	var char_y = (Y+char_y_offset)*grid_cell_size*0.75+start_y
+	
+	
 	var Character = instance_create_depth(char_x,char_y,depth - 1,obj_Character)
 	show_debug_message("Placing new character at: " + string(char_x) + "," + string(char_y))
 	ds_grid_set(battleGrid,X,Y,Character)
@@ -115,7 +124,7 @@ function addCharacter(X,Y){
 		gridX = X
 		gridY = Y
 	}
-
+	return 1;
 }
 
 // moveCharacter moves an existing character from one part of the grid to another
@@ -162,6 +171,6 @@ function moveCharacter(oldX,oldY,newX,newY) {
 	return 1;
 }
 
-addCharacter(1,2)
+addCharacter(2,2)
 addCharacter(2,2)
 addCharacter(3,3)
