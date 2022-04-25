@@ -4,10 +4,7 @@
 gridW = 3
 gridH = 3
 
-rowSprites = [spr_classIcons,spr_raceIcons,spr_classIcons]
-
-show_debug_message("icons" + string(spr_classIcons.sprite_height))
-show_debug_message("row" + string(rowSprites[0].sprite_height))
+rowSprites = [spr_class,spr_race,spr_ability]
 
 gridSizeW = 90
 gridSizeH = 90 
@@ -17,7 +14,20 @@ paddingY = 20
 start_x = room_width/2 - ((gridW)/2)*(gridSizeW+paddingX)
 start_y = paddingY*2
 end_x  = room_width/2 + ((gridW)/2)*(gridSizeW+paddingX)
-end_y = paddingY*3 + gridH*(gridSizeH+paddingY)
+end_y = paddingY*2 + gridH*(gridSizeH+paddingY)
 
-currentRoll = 0
-nextImage = 0
+currentRoll = [0,0,0]
+rollIncrease = [irandom_range(15,25),irandom_range(15,25),irandom_range(15,25)]
+
+rowCount = [11,8,11]
+
+row1 = [irandom(rowCount[0]),irandom(rowCount[0]),irandom(rowCount[0]),irandom(rowCount[0])]
+row2 = [irandom(rowCount[1]),irandom(rowCount[1]),irandom(rowCount[1]),irandom(rowCount[1])]
+row3 = [irandom(rowCount[2]),irandom(rowCount[2]),irandom(rowCount[2]),irandom(rowCount[2])]
+
+rows = [row1,row2,row3]
+finalRoll = [0,0,0]
+finishRoll = [0,0,0]
+rolling = [1,1,1]
+rollInitTimer = 120
+rollInit = rollInitTimer
