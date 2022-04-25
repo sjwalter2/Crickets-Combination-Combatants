@@ -14,4 +14,6 @@ Magic = 10
 MDef = 10
 hp = 100
 
-
+//variables related to location
+gridX = -1
+gridY = -1
