@@ -78,3 +78,4 @@ function moveCharacter(oldX,oldY,newX,newY) {
 
 addCharacter(1,2)
 alarm_set(0,60)
+moveCharacter(1,2,3,3)
