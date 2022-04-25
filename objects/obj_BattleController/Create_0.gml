@@ -66,7 +66,7 @@ function convertXYtoGridXY(inputX,inputY) {
 	//m = c / halfWidth where c is the "height" of the small triangles
     // Work out if the point is above either of the hexagon's top edges
 	var m = 0.5
-	var c = 16
+	var c = grid_cell_size/4
     if (relY < (-m * relX)+c) // LEFT edge
         {
 			show_debug_message("case1")
@@ -113,25 +113,26 @@ function addCharacter(X,Y){
 
 // moveCharacter moves an existing character from one part of the grid to another
 // the inputs {old,new}{X,Y} are grid positions, NOT literal gameMaker x and y
+// returns 1 if successful; 0 if unsuccessful
 function moveCharacter(oldX,oldY,newX,newY) {
 	
 	//verify New X/Ys
 	if newX >= grid_width or newY >= grid_height or newX < 0 or newY < 0 {
 		show_debug_message("New X ("+string(newX)+") or Y (" + string(newY) +") is outside of grid")
-		exit;
+		return 0;
 	}
 
 
 	//Verify character exists at oldX,oldY
 	if(ds_grid_get(battleGrid,oldX,oldY) == -1) {
 		show_debug_message("No character at "+ string(oldX) + "," + string(oldY))
-		exit;
+		return 0;
 	}
 	
 	//Verify no character exists at newX,newY
 	if(ds_grid_get(battleGrid,newX,newY) != -1) {
 		show_debug_message("A character already exists at "+ string(newX) + "," + string(newY))
-		exit;
+		return 0;
 	}
 
 
@@ -151,7 +152,7 @@ function moveCharacter(oldX,oldY,newX,newY) {
 
 
 	ds_grid_set(battleGrid,oldX,oldY,-1)
-
+	return 1;
 }
 
 addCharacter(1,2)
