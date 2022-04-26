@@ -9,61 +9,38 @@ for(var i = 0; i < gridW; i++)
 {
 	for(var j = 0; j <= gridH; j++)	
 	{
-		var rowArr = rows[i]
+		draw_set_halign(fa_middle)
+		draw_set_valign(fa_top)
+		draw_set_color(c_white)
+		var currentSprite = ds_grid_get(slotSpriteGrid,i,j)
+		var currentIndex = ds_grid_get(slotIndexGrid,i,j)
+		
+		var currentTier = int64((string_char_at(sprite_get_name(currentSprite),string_length(sprite_get_name(currentSprite)))))
+		var currentName = getIconInfo(rowSprites[i],currentIndex,currentTier)
+		
+		
+		var currentX = paddingX/2 + start_x + i*gridSizeW +i*paddingX
+
 		if !(j == 0 || j == gridH)
-			draw_sprite(rowSprites[i],rowArr[j],paddingX/2 + start_x + i*gridSizeW +i*paddingX,paddingY + start_y + (j-1)*gridSizeH + (j-1)*paddingY + currentRoll[i])
+		{
+			draw_sprite(currentSprite,currentIndex,currentX,paddingY + start_y + (j-1)*gridSizeH + (j-1)*paddingY + currentRoll[i])
+			draw_text(currentX+gridSizeW/2,paddingY + start_y + (j-1)*gridSizeH + (j-1)*paddingY + currentRoll[i] + 90, currentName)
+		}
 		else if (j == 0)
-			draw_sprite_part(rowSprites[i],rowArr[j],0,gridSizeH-currentRoll[i],gridSizeW,currentRoll[i]+1,paddingX/2 + start_x + i*gridSizeW +i*paddingX,start_y + j*gridSizeH + j*paddingY )
+		{
+			draw_sprite_part(currentSprite,currentIndex,0,gridSizeH-currentRoll[i],gridSizeW,currentRoll[i]+1,currentX,start_y + j*gridSizeH + j*paddingY )
+			draw_text(currentX+gridSizeW/2,paddingY + start_y + (j-1)*gridSizeH + (j-1)*paddingY + currentRoll[i] + 90, currentName)
+		}
 		else if (j == gridH)
-			draw_sprite_part(rowSprites[i],rowArr[j],0,0,gridSizeW,gridSizeH-currentRoll[i]+1,paddingX/2 + start_x + i*gridSizeW +i*paddingX,paddingY + start_y + (j-1)*gridSizeH + (j-1)*paddingY + currentRoll[i] )
+		{
+			draw_sprite_part(currentSprite,currentIndex,0,0,gridSizeW,gridSizeH-currentRoll[i]+1,currentX,paddingY + start_y + (j-1)*gridSizeH + (j-1)*paddingY + currentRoll[i] )
+			if(gridSizeH-currentRoll[i]+1 > 90)
+				draw_text(currentX+gridSizeW/2,paddingY + start_y + (j-1)*gridSizeH + (j-1)*paddingY + currentRoll[i] + 90, currentName)
+			
+		}
 	}	
 }
 
-for(var i = 0; i <gridW; i++)
-{
-	if(finishRoll[i] && currentRoll[i] > gridSizeH + paddingY/2)
-	{
-		currentRoll[i]-=rollIncrease[i]
-	}
-	else if(finishRoll[i] && currentRoll[i] <= gridSizeH + paddingY/2)
-	{
-		finishRoll[i] = 0
-		rolling[i] = 0
-		currentRoll[i] = gridSizeH + paddingY/2
-	}
-	else if rolling[i]
-	{
-		currentRoll[i]+=rollIncrease[i]
-		if(rollInit <= 0)
-			rollIncrease[i]*=.995
-		else
-			rollInit--
-		if(rollIncrease[i] <= 2 && !finalRoll[i])
-		{
-			finalRoll[i] = 1	
-		}
-		if(currentRoll[i] > gridSizeH + paddingY)
-		{
-			if(finalRoll[i])
-			{
-				finishRoll[i] = 1
-				finalRoll[i] = 0
-			
-			}
-			else
-			{
-				currentRoll[i] -= (gridSizeH + paddingY)
-				var oldArray = rows[i]
-				var currentArray = []
-				currentArray[0] = irandom(rowCount[i])
-				for(var j = 0; j < array_length(oldArray)-1; j++)
-				{
-					currentArray[j+1] = oldArray[j]
-				}
-				rows[i] = currentArray
-			}
-		}
-	}
-}
-
+draw_set_color(c_red)
+draw_roundrect(start_x-paddingX, end_y, end_x+paddingX, end_y+paddingY,0)
 

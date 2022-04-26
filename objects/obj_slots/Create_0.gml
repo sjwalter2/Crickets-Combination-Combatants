@@ -1,13 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
+characterInfo()
 
+level = 1
 gridW = 3
 gridH = 3
-
-rowSprites = [spr_class,spr_race,spr_ability]
+global.level = 1
+rowSprites = ["spr_classIcons","spr_raceIcons","spr_abilityIcons"]
 
 gridSizeW = 90
-gridSizeH = 90 
+gridSizeH = 110 
 paddingX = 20
 paddingY = 20
 
@@ -19,13 +21,20 @@ end_y = paddingY*2 + gridH*(gridSizeH+paddingY)
 currentRoll = [0,0,0]
 rollIncrease = [irandom_range(15,25),irandom_range(15,25),irandom_range(15,25)]
 
-rowCount = [11,8,11]
+slotIndexGrid = ds_grid_create(gridW,gridH+1)
+slotSpriteGrid = ds_grid_create(gridW,gridH+1)
+for(var i = 0; i < gridW; i++)
+{
+	for(var j = 0; j <= gridH; j++)
+	{
+		var tier = getRandTier(global.level)
+		var rowSprite = asset_get_index(rowSprites[i] + string(tier))
+		var rowIndexCount = sprite_get_number(rowSprite)
+		ds_grid_add(slotSpriteGrid,i,j,rowSprite)
+		ds_grid_add(slotIndexGrid,i,j,irandom(rowIndexCount))
+	}	
+}
 
-row1 = [irandom(rowCount[0]),irandom(rowCount[0]),irandom(rowCount[0]),irandom(rowCount[0])]
-row2 = [irandom(rowCount[1]),irandom(rowCount[1]),irandom(rowCount[1]),irandom(rowCount[1])]
-row3 = [irandom(rowCount[2]),irandom(rowCount[2]),irandom(rowCount[2]),irandom(rowCount[2])]
-
-rows = [row1,row2,row3]
 finalRoll = [0,0,0]
 finishRoll = [0,0,0]
 rolling = [1,1,1]
