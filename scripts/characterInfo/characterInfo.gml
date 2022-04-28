@@ -25,7 +25,7 @@ abilityList = ds_list_create()
 
 ability1 = ["Blast", "Cleave", "Thrust", "Cone", "Boon/Bane"]
 ability2 = ["Missile", "Wave", "DOT", "Chain"]
-ability3 = ["Piercing Bolt", "Beam", "Grab", "Hook"]
+ability3 = ["Pierce", "Beam", "Grab", "Hook"]
 ability4 = ["Meteor", "Bolt", "Magnet", "Slam"]
 
 ds_list_add(abilityList,ability1,ability2,ability3,ability4)
