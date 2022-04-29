@@ -26,7 +26,9 @@ mode = "placement"
 
 //Placement mode variables
 selectedCharacter = noone
-
+leftClickCounter = 0     //When lmb is down and selectedCharacter != noone (i.e. when a character is selected), leftClickCounter will go up.
+						//When lmb is released, if leftClickCounter > leftClickThreshold, it will run the place character code
+leftClickThreshold = 15
 
 
 function checkOffset(rowY) {
@@ -202,6 +204,15 @@ function moveCharacter(oldX,oldY,newX,newY) {
 
 	
 	return 1;
+}
+
+//This function handles placing a character on the grid and releasing from the mosue
+function placeCharacter() {
+			var newXY = convertXYtoGridXY(mouse_x,mouse_y + selectedCharacter.sprite_height/2)
+			if(moveCharacter(selectedCharacter.gridX,selectedCharacter.gridY,newXY[0],newXY[1])){
+				selectedCharacter.followMouse = 0
+				selectedCharacter = noone;
+			}
 }
 
 addCharacter(2,2)
