@@ -13,8 +13,8 @@ if mode=="placement" {
 				leftClickCounter = 0
 			}
 		} else if (selectedCharacter != noone)
-		{
-			 placeCharacter()
+		{   //Place character
+			placeCharacter()
 		}
 	} else if(mouse_check_button(mb_left) && selectedCharacter != noone) {
 		leftClickCounter += 1
@@ -26,6 +26,7 @@ if mode=="placement" {
 		selectedCharacter = noone
 	}
 	if(mouse_check_button_released(mb_left) && leftClickCounter > leftClickThreshold && selectedCharacter != noone) {
+		//Place character
 		placeCharacter()
 	}
 }
