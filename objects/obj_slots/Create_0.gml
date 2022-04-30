@@ -59,3 +59,4 @@ grabbedColumn = -1
 grabbedRow = -1
 grabbedTile = noone
 grabbedTilePlaced = 0
+changeGrid = 0

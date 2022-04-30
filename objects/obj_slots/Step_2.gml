@@ -1,5 +1,33 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(grabbedTile != noone && !mouse_check_button(mb_left))
+{
+	instance_destroy(grabbedTile)
+	if(!grabbedTilePlaced)
+	{
+		ds_grid_set(slotSpriteGrid,grabbedColumn,grabbedRow,grabbedSprite)
+		ds_grid_set(slotIndexGrid,grabbedColumn,grabbedRow,grabbedIndex)
+		grabbedSprite = ""
+		grabbedIndex = ""
+		grabbedColumn = -1
+		grabbedRow = -1
+		grabbedTile = noone
+	}
+	else
+	{
+		rowBought = grabbedRow
+		
+		ds_grid_set(slotSpriteGrid,grabbedColumn,grabbedRow,grabbedSprite)
+		ds_grid_set(slotIndexGrid,grabbedColumn,grabbedRow,grabbedIndex)
+		grabbedSprite = ""
+		grabbedIndex = ""
+		grabbedColumn = -1
+		grabbedRow = -1
+		grabbedTile = noone
+	}
+	grabbedTile = noone
+}
+
 var allStopped = 1
 for(var i = 0; i <gridW; i++)
 {
@@ -56,11 +84,6 @@ for(var i = 0; i <gridW; i++)
 						ds_grid_set(slotSpriteGrid,i,j+1,ds_grid_get(tempGridSprite,i,j))
 						ds_grid_set(slotIndexGrid,i,j+1,ds_grid_get(tempGridIndex,i,j))
 					}
-					if(grabbedTilePlaced && j < grabbedRow && i == grabbedColumn)
-					{
-						ds_grid_set(slotSpriteGrid,i,j+1,ds_grid_get(tempGridSprite,i,j))
-						ds_grid_set(slotIndexGrid,i,j+1,ds_grid_get(tempGridIndex,i,j))
-					}
 				}
 				
 			}
@@ -93,7 +116,18 @@ if(rowBought != -1 && stopped)
 	rollInit = rollInitTimer
 }
 else if stopped
+{
 	rowBought = -1
+}
+else if stopped && grabbedTilePlaced
+{
+	grabbedTilePlaced = 0	
+	grabbedSprite = ""
+	grabbedIndex = ""
+	grabbedColumn = -1
+	grabbedRow = -1
+	grabbedTile = noone	
+}
 
 var select = 0
 with(obj_BattleController)
@@ -148,29 +182,4 @@ if(stopped && mouse_check_button(mb_left) && !select && grabbedTile == noone)
 		}
 	}
 }
-else if(grabbedTile != noone && !mouse_check_button(mb_left))
-{
-	instance_destroy(grabbedTile)
-	if(!grabbedTilePlaced)
-	{
-		ds_grid_set(slotSpriteGrid,grabbedColumn,grabbedRow,grabbedSprite)
-		ds_grid_set(slotIndexGrid,grabbedColumn,grabbedRow,grabbedIndex)
-		grabbedSprite = ""
-		grabbedIndex = ""
-		grabbedColumn = -1
-		grabbedRow = -1
-		grabbedTile = noone
-	}
-	else
-	{
-		rolling[grabbedColumn] = 1
-		rollIncrease[grabbedColumn] = paddingY/2
-		alarm[1] = 3
-		
-		rollInit = rollInitTimer
-		ds_grid_set(slotSpriteGrid,grabbedColumn,grabbedRow,ds_grid_get(slotSpriteGrid,grabbedColumn,grabbedRow+1))
-		ds_grid_set(slotIndexGrid,grabbedColumn,grabbedRow,ds_grid_get(slotIndexGrid,grabbedColumn,grabbedRow+1))
-		
-	}
-	grabbedTile = noone
-}
+

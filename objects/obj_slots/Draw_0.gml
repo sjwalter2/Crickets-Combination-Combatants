@@ -21,7 +21,7 @@ for(var i = 0; i < gridW; i++)
 		{
 			
 			var rollOff  = currentRoll[i]
-			if(rowBought < j && rowBought != -1 ) || (grabbedTilePlaced && i == grabbedColumn && j > grabbedRow)
+			if(rowBought < j && rowBought != -1 || (i == grabbedColumn && j > grabbedRow))
 			{
 				rollOff = gridSizeH + paddingY/2	
 			}
@@ -81,10 +81,8 @@ for(var i = 0; i < gridW; i++)
 	}	
 }
 
-
 draw_set_color(c_maroon)
 draw_roundrect(start_x-paddingX, start_y-paddingY, end_x+paddingX, start_y,0)
 draw_roundrect(start_x-paddingX, end_y-paddingY/2, end_x+paddingX, end_y+paddingY,0)
 
-
-
+changeGrid = 0
