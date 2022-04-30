@@ -3,29 +3,21 @@
 if(grabbedTile != noone && !mouse_check_button(mb_left))
 {
 	instance_destroy(grabbedTile)
-	if(!grabbedTilePlaced)
-	{
-		ds_grid_set(slotSpriteGrid,grabbedColumn,grabbedRow,grabbedSprite)
-		ds_grid_set(slotIndexGrid,grabbedColumn,grabbedRow,grabbedIndex)
-		grabbedSprite = ""
-		grabbedIndex = ""
-		grabbedColumn = -1
-		grabbedRow = -1
-		grabbedTile = noone
-	}
-	else
+	if(grabbedTilePlaced)
 	{
 		rowBought = grabbedRow
-		
-		ds_grid_set(slotSpriteGrid,grabbedColumn,grabbedRow,grabbedSprite)
-		ds_grid_set(slotIndexGrid,grabbedColumn,grabbedRow,grabbedIndex)
-		grabbedSprite = ""
-		grabbedIndex = ""
-		grabbedColumn = -1
-		grabbedRow = -1
-		grabbedTile = noone
+		columnBought = grabbedColumn
+		grabbedTilePlaced = 0
 	}
+
+	ds_grid_set(slotSpriteGrid,grabbedColumn,grabbedRow,grabbedSprite)
+	ds_grid_set(slotIndexGrid,grabbedColumn,grabbedRow,grabbedIndex)
+	grabbedSprite = ""
+	grabbedIndex = ""
+	grabbedColumn = -1
+	grabbedRow = -1
 	grabbedTile = noone
+
 }
 
 var allStopped = 1
@@ -79,7 +71,7 @@ for(var i = 0; i <gridW; i++)
 
 				for(var j = 0; j < gridH; j++)
 				{
-					if(j < rowBought || rowBought == -1)
+					if(j < rowBought || rowBought == -1) && (columnBought == i || columnBought == - 1)
 					{
 						ds_grid_set(slotSpriteGrid,i,j+1,ds_grid_get(tempGridSprite,i,j))
 						ds_grid_set(slotIndexGrid,i,j+1,ds_grid_get(tempGridIndex,i,j))
@@ -99,35 +91,39 @@ stopped = allStopped
 
 if(rowBought != -1 && stopped)
 {
+	if(columnBought == -1)
+	{
+		ds_grid_set(slotSpriteGrid,0,rowBought,-1)
+		ds_grid_set(slotIndexGrid,0,rowBought,-1)	
 	
-	ds_grid_set(slotSpriteGrid,0,rowBought,-1)
-	ds_grid_set(slotIndexGrid,0,rowBought,-1)	
+		ds_grid_set(slotSpriteGrid,1,rowBought,-1)
+		ds_grid_set(slotIndexGrid,1,rowBought,-1)
 	
-	ds_grid_set(slotSpriteGrid,1,rowBought,-1)
-	ds_grid_set(slotIndexGrid,1,rowBought,-1)
+		ds_grid_set(slotSpriteGrid,2,rowBought,-1)
+		ds_grid_set(slotIndexGrid,2,rowBought,-1)
 	
-	ds_grid_set(slotSpriteGrid,2,rowBought,-1)
-	ds_grid_set(slotIndexGrid,2,rowBought,-1)
-	
-	rolling = [1,1,1]
-	rollIncrease = [paddingY/2,paddingY/2,paddingY/2]
-	alarm[0] = 3
-	
+		rolling = [1,1,1]
+		rollIncrease = [paddingY/2,paddingY/2,paddingY/2]
+		
+		
+	}
+	else
+	{
+		ds_grid_set(slotSpriteGrid,columnBought,rowBought,-1)
+		ds_grid_set(slotIndexGrid,columnBought,rowBought,-1)
+		rolling[columnBought] = 1
+		rollIncrease[columnBought] = paddingY/2
+		finalColumn = columnBought
+	}
 	rollInit = rollInitTimer
+	alarm[0] = 3
 }
 else if stopped
 {
 	rowBought = -1
+	columnBought = -1
 }
-else if stopped && grabbedTilePlaced
-{
-	grabbedTilePlaced = 0	
-	grabbedSprite = ""
-	grabbedIndex = ""
-	grabbedColumn = -1
-	grabbedRow = -1
-	grabbedTile = noone	
-}
+
 
 var select = 0
 with(obj_BattleController)
