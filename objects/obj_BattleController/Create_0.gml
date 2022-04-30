@@ -26,7 +26,9 @@ mode = "placement"
 
 //Placement mode variables
 selectedCharacter = noone
-
+leftClickCounter = 0     //When lmb is down and selectedCharacter != noone (i.e. when a character is selected), leftClickCounter will go up.
+						//When lmb is released, if leftClickCounter > leftClickThreshold, it will run the place character code
+leftClickThreshold = 15
 
 
 function checkOffset(rowY) {
@@ -75,7 +77,6 @@ function convertXYtoGridXY(inputX,inputY) {
 	var c = grid_cell_size/4
     if (relY < (-m * relX)+c) // LEFT edge
         {
-			show_debug_message("case1")
             row--;
 			
             if (rowIsOdd)
@@ -158,6 +159,7 @@ function addCharacter(X,Y,newClass = "Paladin", newRace = "Human", newAbility = 
 // the inputs {old,new}{X,Y} are grid positions, NOT literal gameMaker x and y
 // returns 1 if successful; 0 if unsuccessful
 function moveCharacter(oldX,oldY,newX,newY) {
+	//If source location is from the mouse, spawn will == 1
 	var spawn = (oldX = -1 && oldY = -1)
 
 	//verify New X/Ys
@@ -174,9 +176,11 @@ function moveCharacter(oldX,oldY,newX,newY) {
 	}
 	
 	//Verify no character exists at newX,newY
+	//If a character exists at newX,newY, we will return it; otherwise, we will return "none"
+	var replacementCharacter = "none"
 	if(ds_grid_get(battleGrid,newX,newY) != -1 && (spawn || (ds_grid_get(battleGrid,newX,newY) != ds_grid_get(battleGrid,oldX,oldY)))) {
 		show_debug_message("A character already exists at "+ string(newX) + "," + string(newY))
-		return 0;
+		replacementCharacter = ds_grid_get(battleGrid,newX,newY)
 	}
 
 
@@ -201,9 +205,33 @@ function moveCharacter(oldX,oldY,newX,newY) {
 
 
 	
-	return 1;
+	return replacementCharacter;
+}
+
+
+function placeCharacter() {
+	var newXY = convertXYtoGridXY(mouse_x,mouse_y + selectedCharacter.sprite_height/2)
+	var replacedCharacter = moveCharacter(selectedCharacter.gridX,selectedCharacter.gridY,newXY[0],newXY[1])
+	show_debug_message("replaced character = " + string(replacedCharacter))
+	//if replacedCharacter == 0, then the character wasnt placed
+	if replacedCharacter != 0 {
+		//deselect the character
+		selectedCharacter.followMouse = 0
+		selectedCharacter = noone;
+		//if the placed character replaced another character, the replaced character goes into the mouse
+		if replacedCharacter != "none" {
+			selectedCharacter = replacedCharacter
+			selectedCharacter.followMouse = 1
+			selectedCharacter.returnX = selectedCharacter.x
+			selectedCharacter.returnY = selectedCharacter.y
+			leftClickCounter = 0
+			
+			//character is no longer in the grid, so set it to -1
+			selectedCharacter.gridX = -1
+			selectedCharacter.gridY = -1
+		}
+	}	
 }
 
 addCharacter(2,2)
-addCharacter(2,2)
-addCharacter(3,3)
+addCharacter(1,1,"Warrior","Elf","Smash")
