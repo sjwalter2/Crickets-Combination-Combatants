@@ -27,6 +27,7 @@
     {"id":{"name":"spr_classIcons3","path":"sprites/spr_classIcons3/spr_classIcons3.yy",},"order":7,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":4,},
     {"id":{"name":"spr_hex","path":"sprites/spr_hex/spr_hex.yy",},"order":0,},
+    {"id":{"name":"obj_BattleCharacter","path":"objects/obj_BattleCharacter/obj_BattleCharacter.yy",},"order":8,},
     {"id":{"name":"spr_abilityIcons3","path":"sprites/spr_abilityIcons3/spr_abilityIcons3.yy",},"order":3,},
     {"id":{"name":"room_battle","path":"rooms/room_battle/room_battle.yy",},"order":1,},
     {"id":{"name":"obj_Character","path":"objects/obj_Character/obj_Character.yy",},"order":1,},
