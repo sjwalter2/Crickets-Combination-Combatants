@@ -53,6 +53,8 @@ rollInitTimer = 120
 rollInit = rollInitTimer
 stopped = 0
 rowBought = -1
+columnBought = -1
+
 grabbedSprite = ""
 grabbedIndex = ""
 grabbedColumn = -1
@@ -60,3 +62,5 @@ grabbedRow = -1
 grabbedTile = noone
 grabbedTilePlaced = 0
 changeGrid = 0
+finalColumn = -1
+
