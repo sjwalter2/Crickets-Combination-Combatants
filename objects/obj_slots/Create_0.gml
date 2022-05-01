@@ -19,7 +19,7 @@ end_x  = room_width/2 + ((gridW)/2)*(gridSizeW+paddingX)
 end_y = paddingY*2 + gridH*(gridSizeH+paddingY) + paddingY/2
 
 currentRoll = [0,0,0]
-rollIncrease = [irandom_range(15,25),irandom_range(15,25),irandom_range(15,25)]
+rollIncrease = [irandom_range(25,65),irandom_range(25,65),irandom_range(25,65)]
 
 slotIndexGrid = ds_grid_create(gridW,gridH+1)
 slotSpriteGrid = ds_grid_create(gridW,gridH+1)

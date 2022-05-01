@@ -3,6 +3,6 @@
 if(!rolling[0] && !rolling[1] && !rolling[2])
 {
 	rolling = [1,1,1]
-	rollIncrease = [irandom_range(15,25),irandom_range(15,25),irandom_range(15,25)]
+	rollIncrease = [irandom_range(25,65),irandom_range(25,65),irandom_range(25,65)]
 	rollInit = rollInitTimer
 }
