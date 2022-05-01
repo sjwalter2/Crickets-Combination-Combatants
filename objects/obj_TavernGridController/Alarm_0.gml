@@ -26,6 +26,13 @@ with(instance_create_depth(0,0,0,obj_BattleGridController)){
 				var newChar = instance_create_depth(referenceChar.x,referenceChar.y,referenceChar.depth,obj_BattleCharacter)
 				newChar.gridX = referenceChar.gridX
 				newChar.gridY = referenceChar.gridY
+				newChar.homeGridX = newChar.gridX
+				newChar.homeGridY = newChar.gridY
+				
+				newChar.returnXY = array_create(2)
+				newChar.returnXY[0] = newChar.x
+				newChar.returnXY[1] = newChar.y
+				
 				newChar.class = referenceChar.class
 				newChar.race = referenceChar.race
 				newChar.ability = referenceChar.ability
