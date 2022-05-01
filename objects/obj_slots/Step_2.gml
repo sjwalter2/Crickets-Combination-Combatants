@@ -38,13 +38,18 @@ for(var i = 0; i <gridW; i++)
 	{
 		currentRoll[i]+=rollIncrease[i]
 		if(rollInit <= 0)
-			rollIncrease[i]*=.995
+			rollIncrease[i]*=.95
 		else
 			rollInit--
-		if(rollIncrease[i] <= 2 && !finalRoll[i])
+			
+			
+		if(rollIncrease[i] <= 5 && !finalRoll[i])
 		{
-			finalRoll[i] = 1	
+			finalRoll[i] = 1
 		}
+		if(finalRoll[i] = 1)
+			rollIncrease[i] = 5 
+		
 		if(currentRoll[i] > gridSizeH + paddingY)
 		{
 			if(finalRoll[i])
