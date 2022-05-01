@@ -1,10 +1,10 @@
 /// @description Initialize tavern controller
 with(obj_TavernGridController){
 	//Init variables
-	grid_width = other.grid_width
+	grid_width = other.grid_width - 6
 	grid_height = other.grid_height
 	grid_cell_size = other.grid_cell_size
-	start_x = other.start_x
+	start_x = other.start_x * 4
 	start_y = other.start_y
 	char_x_offset = other.char_x_offset
 	char_y_offset = other.char_y_offset
@@ -18,24 +18,12 @@ with(obj_TavernGridController){
 	//add characters from the other grid
 	var i
 	var j
-	for (i = 0; i < grid_width ; i += 1) {
-		for (j = 0; j < grid_height; j += 1){
-			show_debug_message("i = " + string(i) + ", j = " + string(j))
+	for (i = 0; i < other.grid_width ; i += 1) {
+		for (j = 0; j < other.grid_height; j += 1){
 			if ds_grid_get(other.battleGrid,i,j) != -1 {
 				var referenceChar = ds_grid_get(other.battleGrid,i,j)
-				var newChar = instance_create_depth(referenceChar.x,referenceChar.y,referenceChar.depth,obj_Character)
-				newChar.gridX = referenceChar.gridX
-				newChar.gridY = referenceChar.gridY
-				newChar.homeGridX = newChar.gridX
-				newChar.homeGridY = newChar.gridY
-				
-				newChar.returnXY = array_create(2)
-				newChar.returnXY[0] = newChar.x
-				newChar.returnXY[1] = newChar.y
-				
-				newChar.class = referenceChar.class
-				newChar.race = referenceChar.race
-				newChar.ability = referenceChar.ability
+				var newChar = addCharacter(referenceChar.gridX,referenceChar.gridY,referenceChar.class,referenceChar.race,referenceChar.ability,0)
+
 				newChar.classLvl = referenceChar.classLvl
 				newChar.raceLvl = referenceChar.raceLvl
 				newChar.abilityLvl = referenceChar.abilityLvl
