@@ -18,13 +18,18 @@ hp = 100
 //variables related to location
 gridX = -1
 gridY = -1
+homeGridX = -1
+homeGridY = -1
 
-followMouse = 0
-returnX = x
-returnY = y
+//Set to 1 and character will move toward home
+returningToHome = 0
+
+
+moveSpeed = 5
+
+
+
 image_index = irandom(image_number)
-
-isHovered = 0
 
 ///create event 
 handler=shader_get_uniform(Shader_Outline,"texture_Pixel")

@@ -4,7 +4,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": true,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_GridController",
+    "path": "objects/obj_GridController/obj_GridController.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

@@ -32,6 +32,7 @@
     {"id":{"name":"room_battle","path":"rooms/room_battle/room_battle.yy",},"order":1,},
     {"id":{"name":"obj_Character","path":"objects/obj_Character/obj_Character.yy",},"order":1,},
     {"id":{"name":"spr_classIcons2","path":"sprites/spr_classIcons2/spr_classIcons2.yy",},"order":6,},
+    {"id":{"name":"obj_GridController","path":"objects/obj_GridController/obj_GridController.yy",},"order":9,},
     {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},"order":2,},
     {"id":{"name":"spr_raceIcons2","path":"sprites/spr_raceIcons2/spr_raceIcons2.yy",},"order":10,},
     {"id":{"name":"spr_raceIcons3","path":"sprites/spr_raceIcons3/spr_raceIcons3.yy",},"order":11,},
