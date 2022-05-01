@@ -126,7 +126,7 @@ else if stopped
 
 
 var select = 0
-with(obj_BattleController)
+with(obj_TavernGridController)
 	select = (selectedCharacter != noone)
 	
 if(stopped && mouse_check_button(mb_left) && !select && grabbedTile == noone)

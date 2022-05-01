@@ -31,6 +31,6 @@ if(slots.stopped  && currentMoney > rowCost)
 			rowBought = other.row
 		}
 		
-		with(obj_BattleController)
+		with(obj_TavernGridController)
 			addCharacter(-1,-1,className,raceName,abilityName,1)
 	}

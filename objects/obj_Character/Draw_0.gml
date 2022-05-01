@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 var otherSelected = 0
-with(obj_BattleController)
+with(obj_TavernGridController)
 {
 	if(selectedCharacter != noone && selectedCharacter != other)
 		otherSelected = 1

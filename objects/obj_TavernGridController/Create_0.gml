@@ -15,16 +15,6 @@ battleGrid = ds_grid_create(grid_width,grid_height)
 //Empty grid spaces will have id -1
 ds_grid_set_region(battleGrid,0,0,grid_width-1,grid_height-1,-1);
 
-/*
-mode is a state machine holder
-
-placement: the player is placing characters, buying shop upgrades, etc
-battle: battle is currently occurring
-
-*/
-mode = "placement"
-
-//Placement mode variables
 selectedCharacter = noone
 leftClickCounter = 0     //When lmb is down and selectedCharacter != noone (i.e. when a character is selected), leftClickCounter will go up.
 						//When lmb is released, if leftClickCounter > leftClickThreshold, it will run the place character code
@@ -112,7 +102,6 @@ function addCharacter(X,Y,newClass = "Paladin", newRace = "Human", newAbility = 
 			selectedCharacter.followMouse = 0
 			selectedCharacter = noone
 		}
-		mode = "placement"
 		char_x = 0
 		char_y = 0
 		var Character = instance_create_depth(char_x,char_y,depth - 1,obj_Character)
