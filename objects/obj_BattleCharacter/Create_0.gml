@@ -7,18 +7,7 @@ abilityLvl = 1
 cost = "1"
 sprite = ""
 target = ""
-
-//stats
-HP = 100
-Armor = 0
-MagicResist = 0
-AttackDamage = 10
-MagicPower = 0
-ArmorPenetration = 0
-MagicPenetration = 0
-AttackSpeed = 1
-CooldownReduction = 1
-Range = 1
+statMap = ""
 
 //variables related to location
 gridX = -1

@@ -3,288 +3,312 @@
       "Tier": 1,
       "HP": 400,
       "Armor": 20,
-      "Magic Resist": 20,
+      "MagicResist": 20,
       "AttackDamage": 50,
       "MagicPower": 50,
       "ArmorPenetration": 0,
       "MagicPenetration": 0,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Dwarf": {
       "Tier": 1,
       "HP": 460,
       "Armor": 40,
-      "Magic Resist": 25,
+      "MagicResist": 25,
       "AttackDamage": 50,
       "MagicPower": 35,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.05,
       "AttackSpeed": 0.95,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Elf": {
       "Tier": 1,
       "HP": 240,
       "Armor": 18,
-      "Magic Resist": 20,
+      "MagicResist": 20,
       "AttackDamage": 45,
       "MagicPower": 55,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.05,
       "AttackSpeed": 1.05,
-      "CooldownReduction": 0.95
+      "CooldownReduction": 0.9,
+      "Range": 1
    },
    "Goblin": {
       "Tier": 1,
       "HP": 320,
       "Armor": 15,
-      "Magic Resist": 15,
+      "MagicResist": 15,
       "AttackDamage": 50,
       "MagicPower": 45,
       "ArmorPenetration": 0.05,
       "MagicPenetration": 0,
       "AttackSpeed": 1.15,
-      "CooldownReduction": 0.9
+      "CooldownReduction": 0.85,
+      "Range": 1
    },
    "Halfling": {
       "Tier": 1,
       "HP": 400,
       "Armor": 35,
-      "Magic Resist": 35,
+      "MagicResist": 35,
       "AttackDamage": 40,
       "MagicPower": 35,
       "ArmorPenetration": 0,
       "MagicPenetration": 0,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Orc": {
       "Tier": 1,
       "HP": 480,
       "Armor": 15,
-      "Magic Resist": 10,
+      "MagicResist": 10,
       "AttackDamage": 65,
       "MagicPower": 25,
       "ArmorPenetration": 0,
       "MagicPenetration": 0,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Fiend": {
       "Tier": 2,
       "HP": 440,
       "Armor": 20,
-      "Magic Resist": 25,
+      "MagicResist": 25,
       "AttackDamage": 50,
       "MagicPower": 60,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.05,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Kobold": {
       "Tier": 2,
       "HP": 320,
       "Armor": 20,
-      "Magic Resist": 20,
+      "MagicResist": 20,
       "AttackDamage": 50,
       "MagicPower": 50,
       "ArmorPenetration": 0.05,
       "MagicPenetration": 0,
       "AttackSpeed": 1.15,
-      "CooldownReduction": 0.9
+      "CooldownReduction": 0.85,
+      "Range": 1
    },
    "Fairie": {
       "Tier": 2,
       "HP": 280,
       "Armor": 15,
-      "Magic Resist": 30,
+      "MagicResist": 30,
       "AttackDamage": 40,
       "MagicPower": 60,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.05,
       "AttackSpeed": 1,
-      "CooldownReduction": 0.9
+      "CooldownReduction": 0.85,
+      "Range": 1
    },
    "Air Elemental": {
       "Tier": 2,
       "HP": 400,
       "Armor": 20,
-      "Magic Resist": 20,
+      "MagicResist": 20,
       "AttackDamage": 60,
       "MagicPower": 50,
       "ArmorPenetration": 0.05,
       "MagicPenetration": 0,
       "AttackSpeed": 1.05,
-      "CooldownReduction": 0.95
+      "CooldownReduction": 0.9,
+      "Range": 1
    },
    "Fire Elemental": {
       "Tier": 2,
       "HP": 400,
       "Armor": 20,
-      "Magic Resist": 20,
+      "MagicResist": 20,
       "AttackDamage": 50,
       "MagicPower": 60,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.05,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Earth Elemental": {
       "Tier": 2,
       "HP": 420,
       "Armor": 40,
-      "Magic Resist": 20,
+      "MagicResist": 20,
       "AttackDamage": 50,
       "MagicPower": 50,
       "ArmorPenetration": 0.05,
       "MagicPenetration": 0,
       "AttackSpeed": 0.95,
-      "CooldownReduction": 1.05
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Water Elemental": {
       "Tier": 2,
       "HP": 400,
       "Armor": 20,
-      "Magic Resist": 40,
+      "MagicResist": 40,
       "AttackDamage": 50,
       "MagicPower": 50,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.05,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Dryad": {
       "Tier": 2,
       "HP": 460,
       "Armor": 20,
-      "Magic Resist": 30,
+      "MagicResist": 30,
       "AttackDamage": 60,
       "MagicPower": 50,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.05,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Centaur": {
       "Tier": 2,
       "HP": 500,
       "Armor": 60,
-      "Magic Resist": 20,
+      "MagicResist": 20,
       "AttackDamage": 65,
       "MagicPower": 50,
       "ArmorPenetration": 0.05,
       "MagicPenetration": 0,
       "AttackSpeed": 1.1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Ogre": {
       "Tier": 3,
       "HP": 520,
       "Armor": 40,
-      "Magic Resist": 25,
+      "MagicResist": 25,
       "AttackDamage": 75,
       "MagicPower": 30,
       "ArmorPenetration": 0.07,
       "MagicPenetration": 0,
       "AttackSpeed": 0.95,
-      "CooldownReduction": 1.05
+      "CooldownReduction": 0.85,
+      "Range": 1
    },
    "Gnome": {
       "Tier": 3,
       "HP": 400,
       "Armor": 35,
-      "Magic Resist": 35,
+      "MagicResist": 35,
       "AttackDamage": 60,
       "MagicPower": 75,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.1,
       "AttackSpeed": 1,
-      "CooldownReduction": 0.95
+      "CooldownReduction": 0.9,
+      "Range": 1
    },
    "Ratmen": {
       "Tier": 3,
       "HP": 360,
       "Armor": 35,
-      "Magic Resist": 25,
+      "MagicResist": 25,
       "AttackDamage": 60,
       "MagicPower": 60,
       "ArmorPenetration": 0.1,
       "MagicPenetration": 0.1,
       "AttackSpeed": 1.1,
-      "CooldownReduction": 0.9
+      "CooldownReduction": 0.85,
+      "Range": 1
    },
    "Lizardman": {
       "Tier": 3,
       "HP": 500,
       "Armor": 55,
-      "Magic Resist": 55,
+      "MagicResist": 55,
       "AttackDamage": 65,
       "MagicPower": 50,
       "ArmorPenetration": 0,
       "MagicPenetration": 0,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Hobgoblin": {
       "Tier": 3,
       "HP": 460,
       "Armor": 65,
-      "Magic Resist": 50,
+      "MagicResist": 50,
       "AttackDamage": 65,
       "MagicPower": 40,
       "ArmorPenetration": 0,
       "MagicPenetration": 0,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Giant": {
       "Tier": 4,
       "HP": 660,
       "Armor": 75,
-      "Magic Resist": 70,
+      "MagicResist": 70,
       "AttackDamage": 90,
       "MagicPower": 50,
       "ArmorPenetration": 0.1,
       "MagicPenetration": 0,
       "AttackSpeed": 1,
-      "CooldownReduction": 1.05
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Dragonfolk": {
       "Tier": 4,
       "HP": 540,
       "Armor": 60,
-      "Magic Resist": 75,
+      "MagicResist": 75,
       "AttackDamage": 30,
       "MagicPower": 75,
       "ArmorPenetration": 0,
       "MagicPenetration": 0.05,
       "AttackSpeed": 1,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Minotaur": {
       "Tier": 4,
       "HP": 560,
       "Armor": 75,
-      "Magic Resist": 60,
+      "MagicResist": 60,
       "AttackDamage": 75,
       "MagicPower": 30,
       "ArmorPenetration": 0.05,
       "MagicPenetration": 0,
       "AttackSpeed": 1,
-      "CooldownReduction": 1.05
+      "CooldownReduction": 1,
+      "Range": 1
    },
    "Titan": {
       "Tier": 5,
       "HP": 2000,
       "Armor": 100,
-      "Magic Resist": 100,
+      "MagicResist": 100,
       "AttackDamage": 100,
       "MagicPower": 80,
       "ArmorPenetration": 0.1,
       "MagicPenetration": 0.05,
       "AttackSpeed": 0.8,
-      "CooldownReduction": 1
+      "CooldownReduction": 1,
+      "Range": 1
    }
 }
