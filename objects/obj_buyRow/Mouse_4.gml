@@ -4,7 +4,11 @@ var currentMoney = 0
 with(obj_moneyController)
 	currentMoney = money
 	
-if(slots.stopped  && currentMoney > rowCost)
+var characterHeld = 0
+with(obj_TavernGridController)
+	characterHeld = selectedCharacter != noone
+
+if(slots.stopped  && currentMoney > rowCost && !characterHeld)
 	{
 		with(obj_moneyController)
 			money -= other.rowCost

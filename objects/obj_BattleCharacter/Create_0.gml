@@ -17,11 +17,12 @@ homeGridY = -1
 
 //Set to 1 and character will move toward home
 returningToHome = 0
-
-
 moveSpeed = 5
 
 
+//Battle Variables
+targetedEnemy = noone
+inBattle = 1
 
 image_index = irandom(image_number)
 
