@@ -11,11 +11,16 @@ sprite = ""
 target = ""
 
 //stats
-Atk = 10
-Def = 10
-Magic = 10
-MDef = 10
-hp = 100
+HP = 100
+Armor = 0
+MagicResist = 0
+AttackDamage = 10
+MagicPower = 0
+ArmorPenetration = 0
+MagicPenetration = 0
+AttackSpeed = 1
+CooldownReduction = 1
+Range = 1
 
 //variables related to location
 gridX = -1
@@ -32,3 +37,5 @@ isHovered = 0
 handler=shader_get_uniform(Shader_Outline,"texture_Pixel")
 handler_1=shader_get_uniform(Shader_Outline,"thickness_power")
 handler_2=shader_get_uniform(Shader_Outline,"RGBA")
+
+alarm[0] = 1

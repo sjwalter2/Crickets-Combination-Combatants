@@ -14,7 +14,7 @@ ds_list_add(classList,class1,class2,class3,class4)
 raceList = ds_list_create()
 
 race1 = ["Human", "Elf", "Dwarf", "Goblin", "Halfling", "Orc"]
-race2 = ["Fiend", "Kobold", "Fairie", "Elemental","Dryad","Centaur"]
+race2 = ["Fiend", "Kobold", "Fairie", "Air Elemental", "Earth Elemental", "Fire Elemental", "Water Elemental","Dryad","Centaur"]
 race3 = ["Ogre", "Gnome", "Ratmen", "Lizardman","Hobgoblin"]
 race4 = ["Minotaur", "Dragonfolk", "Giant"]
 

@@ -9,11 +9,16 @@ sprite = ""
 target = ""
 
 //stats
-Atk = 10
-Def = 10
-Magic = 10
-MDef = 10
-hp = 100
+HP = 100
+Armor = 0
+MagicResist = 0
+AttackDamage = 10
+MagicPower = 0
+ArmorPenetration = 0
+MagicPenetration = 0
+AttackSpeed = 1
+CooldownReduction = 1
+Range = 1
 
 //variables related to location
 gridX = -1
