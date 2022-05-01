@@ -1,5 +1,5 @@
-/// @description Initialize battle controller
-with(instance_create_depth(0,0,0,obj_BattleGridController)){
+/// @description Initialize tavern controller
+with(obj_TavernGridController){
 	//Init variables
 	grid_width = other.grid_width
 	grid_height = other.grid_height
@@ -23,7 +23,7 @@ with(instance_create_depth(0,0,0,obj_BattleGridController)){
 			show_debug_message("i = " + string(i) + ", j = " + string(j))
 			if ds_grid_get(other.battleGrid,i,j) != -1 {
 				var referenceChar = ds_grid_get(other.battleGrid,i,j)
-				var newChar = instance_create_depth(referenceChar.x,referenceChar.y,referenceChar.depth,obj_BattleCharacter)
+				var newChar = instance_create_depth(referenceChar.x,referenceChar.y,referenceChar.depth,obj_Character)
 				newChar.gridX = referenceChar.gridX
 				newChar.gridY = referenceChar.gridY
 				newChar.homeGridX = newChar.gridX
