@@ -13,7 +13,7 @@ if(returningToHome == 1) {
 }
 
 with obj_GridController {
-	var newGridXY = convertGridXYtoXY(other.x,other.y)
+	var newGridXY = convertXYtoGridXY(other.x,other.y)
 	other.gridX = newGridXY[0]
 	other.gridY = newGridXY[1]
 }

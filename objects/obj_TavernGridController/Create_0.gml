@@ -148,5 +148,3 @@ function placeCharacter() {
 	}	
 }
 
-addCharacter(2,2)
-addCharacter(1,1,"Warrior","Elf","Smash")
