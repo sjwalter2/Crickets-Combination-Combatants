@@ -4,6 +4,7 @@ CharacterType = "obj_Character"
 
 event_inherited()
 
+
 //Create the battle grid
 battleGrid = ds_grid_create(grid_width,grid_height)
 //The grid will be filled with the id's of character instances

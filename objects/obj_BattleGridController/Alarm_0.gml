@@ -1,11 +1,9 @@
 /// @description Initialize tavern controller
 with(obj_TavernGridController){
 	//Init variables
-	grid_width = other.grid_width - 6
-	grid_height = other.grid_height
+	grid_width = other.grid_width - other.grid_X_buffer - 6
+	grid_height = other.grid_height - 2*other.grid_Y_buffer
 	grid_cell_size = other.grid_cell_size
-	start_x = other.start_x * 4
-	start_y = other.start_y
 	char_x_offset = other.char_x_offset
 	char_y_offset = other.char_y_offset
 
@@ -22,7 +20,7 @@ with(obj_TavernGridController){
 		for (j = 0; j < other.grid_height; j += 1){
 			if ds_grid_get(other.battleGrid,i,j) != -1 {
 				var referenceChar = ds_grid_get(other.battleGrid,i,j)
-				var newChar = addCharacter(referenceChar.gridX,referenceChar.gridY,referenceChar.class,referenceChar.race,referenceChar.ability,0)
+				var newChar = addCharacter(referenceChar.gridX-other.grid_X_buffer,referenceChar.gridY-other.grid_Y_buffer,referenceChar.class,referenceChar.race,referenceChar.ability,0)
 
 				newChar.classLvl = referenceChar.classLvl
 				newChar.raceLvl = referenceChar.raceLvl
@@ -32,7 +30,7 @@ with(obj_TavernGridController){
 				newChar.statMap = referenceChar.statMap
 				newChar.image_index = referenceChar.image_index
 
-				ds_grid_set(battleGrid,i,j,newChar)
+				ds_grid_set(battleGrid,i-other.grid_X_buffer,j-other.grid_Y_buffer,newChar)
 				instance_destroy(referenceChar)
 			}
 		}

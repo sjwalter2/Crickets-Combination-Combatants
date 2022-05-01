@@ -1,11 +1,9 @@
 /// @description Initialize battle controller
 with(instance_create_depth(0,0,0,obj_BattleGridController)){
 	//Init variables
-	grid_width = other.grid_width+6
-	grid_height = other.grid_height
+	grid_width = other.grid_width+grid_X_buffer + 6
+	grid_height = other.grid_height + grid_Y_buffer*2
 	grid_cell_size = other.grid_cell_size
-	start_x = other.start_x * 0.25
-	start_y = other.start_y
 	char_x_offset = other.char_x_offset
 	char_y_offset = other.char_y_offset
 
@@ -24,7 +22,7 @@ with(instance_create_depth(0,0,0,obj_BattleGridController)){
 			if ds_grid_get(other.battleGrid,i,j) != -1 {
 				var referenceChar = ds_grid_get(other.battleGrid,i,j)
 				
-				var newChar = addCharacter(referenceChar.gridX,referenceChar.gridY,referenceChar.class,referenceChar.race,referenceChar.ability,0)
+				var newChar = addCharacter(referenceChar.gridX+grid_X_buffer,referenceChar.gridY+grid_Y_buffer,referenceChar.class,referenceChar.race,referenceChar.ability,0)
 
 				newChar.classLvl = referenceChar.classLvl
 				newChar.raceLvl = referenceChar.raceLvl
@@ -34,7 +32,7 @@ with(instance_create_depth(0,0,0,obj_BattleGridController)){
 				newChar.statMap = referenceChar.statMap
 				newChar.image_index = referenceChar.image_index
 
-				ds_grid_set(battleGrid,i,j,newChar)
+				ds_grid_set(battleGrid,i+grid_X_buffer,j+grid_Y_buffer,newChar)
 				instance_destroy(referenceChar)
 			}
 		}
