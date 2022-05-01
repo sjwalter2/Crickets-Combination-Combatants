@@ -41,11 +41,11 @@ with(instance_create_depth(0,0,0,obj_BattleGridController)){
 				newChar.abilityLvl = referenceChar.abilityLvl
 
 				//stats
-				newChar.Atk = referenceChar.Atk
-				newChar.Def = referenceChar.Def
-				newChar.Magic = referenceChar.Magic
-				newChar.MDef = referenceChar.MDef
-				newChar.hp = referenceChar.hp
+				//newChar.Atk = referenceChar.Atk
+				//newChar.Def = referenceChar.Def
+				//newChar.Magic = referenceChar.Magic
+				//newChar.MDef = referenceChar.MDef
+				//newChar.hp = referenceChar.hp
 				newChar.image_index = referenceChar.image_index
 
 				ds_grid_set(battleGrid,i,j,newChar)

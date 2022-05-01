@@ -12,6 +12,5 @@ file_text_close(racefile);
 
 var theJsonMap = json_decode(theData);
 var theList = ds_map_find_value(theJsonMap, "Human");
-
 show_debug_message(ds_map_find_value(theList, "Armor"))
 
