@@ -1,7 +1,7 @@
 /// @description Initialize battle controller
 with(instance_create_depth(0,0,0,obj_BattleGridController)){
 	//Init variables
-	grid_width = other.grid_width+grid_X_buffer + 6
+	grid_width = other.grid_width+grid_X_buffer + grid_extension
 	grid_height = other.grid_height + grid_Y_buffer*2
 	grid_cell_size = other.grid_cell_size
 	char_x_offset = other.char_x_offset
