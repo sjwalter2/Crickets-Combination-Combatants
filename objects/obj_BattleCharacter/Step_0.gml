@@ -12,8 +12,23 @@ if(returningToHome == 1) {
 	}
 }
 
+var range = ds_map_find_value(statMap,"Range")
+var cellDistance = 0
+with obj_BattleGridController
+	cellDistance = grid_cell_size
+	
+	
 with obj_GridController {
 	var newGridXY = convertXYtoGridXY(other.x,other.y)
 	other.gridX = newGridXY[0]
 	other.gridY = newGridXY[1]
+}
+
+if(inBattle && targetedEnemy == noone)
+{
+	targetedEnemy = instance_nearest(x,y,obj_enemy)
+}
+else if(inBattle && targetedEnemy != noone && point_distance(x,y,targetedEnemy.x,targetedEnemy.y) > range*cellDistance+cellDistance*.5)
+{
+
 }
