@@ -104,8 +104,6 @@ if(rowBought != -1 && stopped)
 	
 		rolling = [1,1,1]
 		rollIncrease = [paddingY/2,paddingY/2,paddingY/2]
-		
-		
 	}
 	else
 	{
@@ -123,7 +121,6 @@ else if stopped
 	rowBought = -1
 	columnBought = -1
 }
-
 
 var select = 0
 with(obj_BattleController)
@@ -172,9 +169,7 @@ if(stopped && mouse_check_button(mb_left) && !select && grabbedTile == noone)
 						break
 					}
 				}	
-				
-			}
-				
+			}	
 		}
 	}
 }
