@@ -1,6 +1,9 @@
 /// @description Initialize a battle
 
+CharacterType = "obj_Character"
+
 event_inherited()
+
 
 //Create the battle grid
 battleGrid = ds_grid_create(grid_width,grid_height)
@@ -13,62 +16,6 @@ leftClickCounter = 0     //When lmb is down and selectedCharacter != noone (i.e.
 						//When lmb is released, if leftClickCounter > leftClickThreshold, it will run the place character code
 leftClickThreshold = 15
 
-
-// addCharacter creates a character at grid position X,Y and adds it to the battleGrid
-// note: X and Y are grid positions, NOT literal gameMaker x and y
-// if character is successfully placed, return 1; otherwise, return 0. Any code using this function should check to ensure adding character was successful.
-function addCharacter(X,Y,newClass = "Paladin", newRace = "Human", newAbility = "Cleave", spawn = 0){
-	if(spawn)
-	{
-		X = -1
-		Y = -1
-		if (selectedCharacter != noone){
-			selectedCharacter.x = selectedCharacter.returnX
-			selectedCharacter.y = selectedCharacter.returnY
-			selectedCharacter.followMouse = 0
-			selectedCharacter = noone
-		}
-		char_x = 0
-		char_y = 0
-		var Character = instance_create_depth(char_x,char_y,depth - 1,obj_Character)
-	}
-	else
-	{
-		if X >= grid_width or Y >= grid_height or X < 0 or Y < 0 {
-			show_debug_message(" X or Y is outside of grid")
-			return 0;
-		}
-		//Verify no character exists at newX,newY
-		if(ds_grid_get(battleGrid,X,Y) != -1) {
-			show_debug_message("A character already exists at "+ string(X) + "," + string(Y))
-			return 0;
-		}
-
-	
-		var x_offset = checkOffset(Y)
-		var char_x = (X+char_x_offset)*grid_cell_size+x_offset+start_x
-		var char_y = (Y+char_y_offset)*grid_cell_size*0.75+start_y
-		show_debug_message("Placing new character at: " + string(char_x) + "," + string(char_y))
-		var Character = instance_create_depth(char_x,char_y,depth - 1,obj_Character)
-		ds_grid_set(battleGrid,X,Y,Character)
-	}
-	
-	
-	
-	with(Character){
-		gridX = X
-		gridY = Y
-		class = newClass
-		race = newRace
-		ability = newAbility
-		if(spawn)
-		{
-			followMouse = 1
-			other.selectedCharacter = id
-		}
-	}
-	return 1;
-}
 
 // moveCharacter moves an existing character from one part of the grid to another
 // the inputs {old,new}{X,Y} are grid positions, NOT literal gameMaker x and y
