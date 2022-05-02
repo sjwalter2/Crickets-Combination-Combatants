@@ -18,3 +18,5 @@ draw_set_color(c_white)
 draw_text(x+sprite_width/4,y-45,classStr)
 draw_text(x+sprite_width/4,y-30,raceStr)
 draw_text(x+sprite_width/4,y-15,abilityStr)
+
+

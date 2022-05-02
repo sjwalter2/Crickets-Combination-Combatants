@@ -5,6 +5,7 @@
     {"id":{"name":"spr_raceIcons0","path":"sprites/spr_raceIcons0/spr_raceIcons0.yy",},"order":8,},
     {"id":{"name":"spr_character","path":"sprites/spr_character/spr_character.yy",},"order":1,},
     {"id":{"name":"spr_abilityIcons1","path":"sprites/spr_abilityIcons1/spr_abilityIcons1.yy",},"order":1,},
+    {"id":{"name":"axialDistance","path":"scripts/axialDistance/axialDistance.yy",},"order":8,},
     {"id":{"name":"spr_abilityIcons2","path":"sprites/spr_abilityIcons2/spr_abilityIcons2.yy",},"order":2,},
     {"id":{"name":"spr_classIcons0","path":"sprites/spr_classIcons0/spr_classIcons0.yy",},"order":4,},
     {"id":{"name":"getStats","path":"scripts/getStats/getStats.yy",},"order":7,},

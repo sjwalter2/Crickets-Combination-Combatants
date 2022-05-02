@@ -30,3 +30,5 @@ image_index = irandom(image_number)
 handler=shader_get_uniform(Shader_Outline,"texture_Pixel")
 handler_1=shader_get_uniform(Shader_Outline,"thickness_power")
 handler_2=shader_get_uniform(Shader_Outline,"RGBA")
+
+show_range = 0

@@ -7,3 +7,6 @@ event_inherited();
 
 start_y = 128
 start_x = 128
+alarm[2] = 1
+
+rangeGrid = -1
