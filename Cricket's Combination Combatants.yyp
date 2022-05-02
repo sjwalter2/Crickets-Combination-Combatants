@@ -24,6 +24,7 @@
     {"id":{"name":"spr_abilityIcons0","path":"sprites/spr_abilityIcons0/spr_abilityIcons0.yy",},"order":0,},
     {"id":{"name":"spr_raceIcons1","path":"sprites/spr_raceIcons1/spr_raceIcons1.yy",},"order":9,},
     {"id":{"name":"getRandTier","path":"scripts/getRandTier/getRandTier.yy",},"order":3,},
+    {"id":{"name":"spawnMonsters","path":"scripts/spawnMonsters/spawnMonsters.yy",},"order":8,},
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},"order":5,},
     {"id":{"name":"obj_buyTile","path":"objects/obj_buyTile/obj_buyTile.yy",},"order":6,},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"order":10,},

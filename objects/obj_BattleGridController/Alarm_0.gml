@@ -20,6 +20,9 @@ with(obj_TavernGridController){
 		for (j = 0; j < other.grid_height; j += 1){
 			if ds_grid_get(other.battleGrid,i,j) != -1 {
 				var referenceChar = ds_grid_get(other.battleGrid,i,j)
+				if(referenceChar.object_index != obj_BattleCharacter) {
+					break;
+				}
 				var newChar = addCharacter(referenceChar.gridX-other.grid_X_buffer,referenceChar.gridY-other.grid_Y_buffer,referenceChar.class,referenceChar.race,referenceChar.ability,0)
 
 				newChar.classLvl = referenceChar.classLvl
@@ -37,5 +40,7 @@ with(obj_TavernGridController){
 	}
 }
 
-
+with(obj_enemy) {
+	instance_destroy(id)
+}
 instance_destroy(id)
