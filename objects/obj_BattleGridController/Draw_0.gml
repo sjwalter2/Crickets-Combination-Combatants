@@ -6,7 +6,7 @@ for (var i = 0; i < ds_grid_height(battleGrid); i+=1)
 	{	
 		//The even rows will be offset by half a cell to make the hexes fit
 		var x_offset = 0;
-		if i mod 2 == 0 
+		if i mod 2 == 0
 		{
 			x_offset = grid_cell_size/2
 		}
@@ -20,7 +20,7 @@ for (var i = 0; i < ds_grid_height(battleGrid); i+=1)
 		draw_set_valign(fa_middle)
 		draw_set_halign(fa_center)
 		
-		var q = j - (i + i&1)/2
+		var q = j - (i + i%2)/2
 		var r = i
 		
 		draw_text(start_x + j*grid_cell_size+x_offset+grid_cell_size/2,start_y + i*grid_cell_size*0.75+grid_cell_size/2,string(q) + "," + string(r) + "," +string(-q-r))
