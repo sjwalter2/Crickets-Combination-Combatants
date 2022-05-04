@@ -16,13 +16,18 @@ var range = ds_map_find_value(statMap,"Range")
 var cellDistance = 0
 with obj_BattleGridController
 	cellDistance = grid_cell_size
-	
-	
+
+
+
+//Keeps track of what grid cell the character is in	
 with obj_GridController {
+
 	var newGridXY = convertXYtoGridXY(other.x,other.y)
 	other.gridX = newGridXY[0]
 	other.gridY = newGridXY[1]
+
 }
+	
 
 if(inBattle && targetedEnemy == noone)
 {

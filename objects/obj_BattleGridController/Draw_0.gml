@@ -24,6 +24,8 @@ for (var i = 0; i < ds_grid_height(battleGrid); i+=1)
 		var r = i
 		
 		draw_text(start_x + j*grid_cell_size+x_offset+grid_cell_size/2,start_y + i*grid_cell_size*0.75+grid_cell_size/2,string(q) + "," + string(r) + "," +string(-q-r))
+		draw_text(start_x + j*grid_cell_size+x_offset+grid_cell_size/2,start_y + i*grid_cell_size*0.75+grid_cell_size/2+10,string(ds_grid_get(battleGrid,j,i)))
+
 	}
 }
 
