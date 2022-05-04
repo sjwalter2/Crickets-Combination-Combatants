@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Buy the row
 // You can write your code in this editor
 var currentMoney = 0
 with(obj_moneyController)
@@ -35,6 +35,7 @@ if(slots.stopped  && currentMoney > rowCost && !characterHeld)
 			rowBought = other.row
 		}
 		
+		//Create a character with the class/race/ability of the row
 		with(obj_TavernGridController)
 			addCharacter(-1,-1,className,raceName,abilityName,1)
 	}

@@ -11,6 +11,8 @@ with(obj_Character)
 	if(isHovered && id != other.id)
 		otherHovered = 1
 
+
+//Draw an outline when hovered
 if((!otherHovered && !otherSelected && mouseInside(bbox_left,bbox_top,bbox_right,bbox_bottom)) || followMouse)
 {
 	///draw event

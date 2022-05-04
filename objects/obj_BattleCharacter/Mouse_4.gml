@@ -3,6 +3,8 @@
 
 show_range = !show_range
 var range = ds_map_find_value(statMap, "Range")
+
+//Math for finding the range on a hex grid
 with(obj_BattleGridController)
 {
 	ds_grid_clear(rangeGrid,0)

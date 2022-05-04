@@ -1,8 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+//Code for dropping a picked up tile
 if(grabbedTile != noone && !mouse_check_button(mb_left))
 {
+	
 	instance_destroy(grabbedTile)
+	
+	//If it is placed on a valid target the spot will fill on the slots
 	if(grabbedTilePlaced)
 	{
 		rowBought = grabbedRow
@@ -20,6 +25,7 @@ if(grabbedTile != noone && !mouse_check_button(mb_left))
 
 }
 
+//Code for rolling the slot machine and slowing it down
 var allStopped = 1
 for(var i = 0; i <gridW; i++)
 {
@@ -37,18 +43,16 @@ for(var i = 0; i <gridW; i++)
 	else if rolling[i]
 	{
 		currentRoll[i]+=rollIncrease[i]
-		if(rollInit <= 0)
-			rollIncrease[i]*=.95
-		else
-			rollInit--
+		rollIncrease[i]*=slowMod
+
 			
 			
-		if(rollIncrease[i] <= 5 && !finalRoll[i])
+		if(rollIncrease[i] <= minSpeed && !finalRoll[i])
 		{
 			finalRoll[i] = 1
 		}
 		if(finalRoll[i] = 1)
-			rollIncrease[i] = 5 
+			rollIncrease[i] = minSpeed 
 		
 		if(currentRoll[i] > gridSizeH + paddingY)
 		{
@@ -60,8 +64,8 @@ for(var i = 0; i <gridW; i++)
 			}
 			else
 			{
-				currentRoll[i] -= (gridSizeH + paddingY)
-								
+				//Gets a new tile when needed
+				currentRoll[i] -= (gridSizeH + paddingY)		
 				var tier = getRandTier(global.level)
 				var rowSprite = asset_get_index(rowSprites[i] + string(tier))
 				var rowIndexCount = sprite_get_number(rowSprite)
@@ -94,6 +98,7 @@ for(var i = 0; i <gridW; i++)
 }
 stopped = allStopped
 
+//Code for buying a row and replacing the tiles with empty space
 if(rowBought != -1 && stopped)
 {
 	if(columnBought == -1)
@@ -118,7 +123,6 @@ if(rowBought != -1 && stopped)
 		rollIncrease[columnBought] = paddingY/2
 		finalColumn = columnBought
 	}
-	rollInit = rollInitTimer
 	alarm[0] = 3
 }
 else if stopped
@@ -127,6 +131,8 @@ else if stopped
 	columnBought = -1
 }
 
+
+//Code for picking up a tile
 var select = 0
 with(obj_TavernGridController)
 	select = (selectedCharacter != noone)

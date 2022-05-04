@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+//Draw the stats while hovered
 if(isHovered)
 {
 	draw_set_color(c_white)
