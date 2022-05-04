@@ -6,10 +6,7 @@ for (i = 0; i < ds_grid_height(battleGrid); i+=1) {
 	for (j = 0; j < ds_grid_width(battleGrid); j+=1) {
 		
 		//The even rows will be offset by half a cell to make the hexes fit
-		var x_offset = 0;
-		if i mod 2 == 0 {
-			x_offset = grid_cell_size/2
-		}
+		var x_offset = checkOffset(i);
 		var currentSprite = 0
 		if (selectedCharacter != noone)
 		{

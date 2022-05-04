@@ -64,7 +64,6 @@ function convertXYtoGridXY(inputX,inputY) {
         }
     else if (relY < (m * relX)-c) // RIGHT edge
         {
-			show_debug_message("case2")
             row--;
             if (!rowIsOdd)
                 column++;
@@ -78,10 +77,7 @@ function convertXYtoGridXY(inputX,inputY) {
 function convertGridXYtoXY(inputGridX,inputGridY) {
 	var returnXY = array_create(2)
 	
-	var xoffset = 0
-	if inputGridX mod 2 == 0 {
-		xoffset = grid_cell_size / 2
-	}
+	xoffset = checkOffset(inputGridY)
 	returnXY[0] = (inputGridX * grid_cell_size)+ start_x + xoffset + (0.5*grid_cell_size)
 	returnXY[1] = (inputGridY * grid_cell_size)+ start_y
 

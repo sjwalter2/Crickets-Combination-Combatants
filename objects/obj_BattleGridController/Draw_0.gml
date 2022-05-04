@@ -5,11 +5,7 @@ for (var i = 0; i < ds_grid_height(battleGrid); i+=1)
 	for (var j = 0; j < ds_grid_width(battleGrid); j+=1) 
 	{	
 		//The even rows will be offset by half a cell to make the hexes fit
-		var x_offset = 0;
-		if i mod 2 == 0
-		{
-			x_offset = grid_cell_size/2
-		}
+		var x_offset = checkOffset(i);
 		
 		if(rangeGrid != -1 && ds_grid_get(rangeGrid,j,i))
 			draw_sprite_ext(spr_hex,1,start_x + j*grid_cell_size+x_offset,start_y + i*grid_cell_size*0.75,1,1,0,c_blue,1)
