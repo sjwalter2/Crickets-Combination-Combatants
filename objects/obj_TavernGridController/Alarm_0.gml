@@ -18,7 +18,6 @@ with(instance_create_depth(0,0,0,obj_BattleGridController)){
 	var j
 	for (i = 0; i < other.grid_width ; i += 1) {
 		for (j = 0; j < other.grid_height; j += 1){
-			show_debug_message("i = " + string(i) + ", j = " + string(j))
 			if ds_grid_get(other.battleGrid,i,j) != -1 {
 				var referenceChar = ds_grid_get(other.battleGrid,i,j)
 				
