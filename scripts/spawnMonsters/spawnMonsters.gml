@@ -22,8 +22,9 @@ function addMonster(X,Y){
 		show_debug_message("Placing new monster at: " + string(char_x) + "," + string(char_y))
 		var Monster = instance_create_depth(char_x,char_y,depth - 1,obj_enemy)
 		ds_grid_set(battleGrid,X,Y,Monster)
-	
-	with(obj_enemy){
+		with(obj_BattleGridController)
+			ds_grid_set(targetedGrid,X,Y,1)
+	with(Monster){
 		gridX = X
 		homeGridX = gridX
 		gridY = Y
@@ -32,6 +33,7 @@ function addMonster(X,Y){
 		returnXY[0] = x
 		returnXY[1] = y
 	}
+	
 	return Monster;
 }
 

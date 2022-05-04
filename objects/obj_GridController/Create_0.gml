@@ -76,16 +76,20 @@ function convertXYtoGridXY(inputX,inputY) {
 }
 
 function convertGridXYtoXY(inputGridX,inputGridY) {
-	var returnXY = array_create(2)
+	if(inputGridX != -1 && inputGridY != -1)
+	{
+		var returnXY = array_create(2)
 	
-	var xoffset = 0
-	if inputGridX mod 2 == 0 {
-		xoffset = grid_cell_size / 2
+		var xoffset = 0
+		if inputGridY mod 2 == 0 {
+			xoffset = grid_cell_size / 2
+		}
+		returnXY[0] = ((inputGridX) * grid_cell_size) + start_x + xoffset+grid_cell_size*char_x_offset
+		returnXY[1] = (inputGridY * grid_cell_size)*.75 + start_y +grid_cell_size*char_y_offset
+		return returnXY;
 	}
-	returnXY[0] = (inputGridX * grid_cell_size)+ start_x + xoffset + (0.5*grid_cell_size)
-	returnXY[1] = (inputGridY * grid_cell_size)+ start_y
-
-	return returnXY;
+	else
+		return -1
 }
 
 // addCharacter creates a character at grid position X,Y and adds it to the battleGrid

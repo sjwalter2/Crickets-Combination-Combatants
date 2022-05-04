@@ -19,4 +19,15 @@ draw_text(x+sprite_width/4,y-45,classStr)
 draw_text(x+sprite_width/4,y-30,raceStr)
 draw_text(x+sprite_width/4,y-15,abilityStr)
 
+var targetXY
+with(obj_BattleGridController)
+	targetXY = convertGridXYtoXY(other.targetX,other.targetY)
 
+
+if(targetXY != -1)
+{
+	draw_circle(targetXY[0],targetXY[1],10,1)
+	draw_circle(x,y,9,0)
+	draw_set_color(c_red)
+	draw_text(x,y,string(targetX)+","+string(targetY))
+}

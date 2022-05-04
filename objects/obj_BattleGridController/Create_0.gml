@@ -12,3 +12,4 @@ start_x = 128
 alarm[2] = 1
 
 rangeGrid = -1
+targetedGrid = -1
