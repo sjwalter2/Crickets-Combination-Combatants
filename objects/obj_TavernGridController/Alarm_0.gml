@@ -32,7 +32,6 @@ with(instance_create_depth(0,0,0,obj_BattleGridController)){
 				newChar.statMap = referenceChar.statMap
 				newChar.image_index = referenceChar.image_index
 
-				ds_grid_set(battleGrid,i+grid_X_buffer,j+grid_Y_buffer,newChar)
 				instance_destroy(referenceChar)
 			}
 		}
