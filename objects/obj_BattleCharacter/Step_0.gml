@@ -67,7 +67,7 @@ else if(rangeGridExists && inBattle && targetedEnemy != noone && targetXY != -1 
 		targetXY = convertGridXYtoXY(other.targetX,other.targetY)
 
 	}
-	mp_potential_step_object(targetXY[0],targetXY[1],moveSpeed,obj_enemy)
+	mp_potential_step_object(targetXY[0],targetXY[1],moveSpeed,obj_gridParent)
 }
 else if(rangeGridExists && inBattle && targetedEnemy != noone && (point_distance(x,y,targetXY[0],targetXY[1])<=moveSpeed))
 {
